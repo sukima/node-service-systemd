@@ -1,0 +1,16 @@
+{
+    "name": "my-node-service",
+    "description": "an amazing service",
+    "path": "/node/my-node-service/",
+    "script": "main.js",
+    "args": "-debug",
+    "pid": "/var/run/my-node-service.pid",
+    "log": "/var/log/my-node-service/log",
+    "error": "/var/log/my-node-service/error",
+    "wrap.bin": "/usr/bin/forever",
+    "logrotate": "logrotate",
+    "logrotate.rotate": "10",
+    "logrotate.frequency": "daily",
+    "user": "www-data",
+    "group": "www-data"
+}

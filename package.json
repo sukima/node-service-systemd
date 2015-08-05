@@ -1,0 +1,29 @@
+{
+    "name": "service-systemd",
+    "version": "1.0.0",
+    "description": "Run Node.js as systemd service",
+    "keywords": ["systemd", "service", "deploy"],
+    "url": "http://github.com/simone-sanfratello/node-service-systemd",
+    "author": "Simone Sanfratello <simone.sanfra@gmail.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/simone-sanfratello/node-service-systemd.git"
+    },
+    "engines": {
+        "node": ">= 0.10.x"
+    },
+    "files": ["bin/main.js"],
+    "dependencies": {
+        "a-toolbox": "x",
+        "cjson": "x",
+        "shelljs": "x"
+    },
+    "bin": {
+        "node-systemd": "./bin/main.js"
+    },    
+    "preferGlobal": true,
+    "os": [
+        "linux"
+    ]
+}
