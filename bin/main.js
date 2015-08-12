@@ -2,7 +2,6 @@
 
 // todo
 // logrotate: add crontab script
-// wrap: forever, pm2
 // check settings data
 // check paths
 // rollback on error
