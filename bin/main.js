@@ -14,7 +14,7 @@ if (process.env.USER != 'root') {
 
 // get args
 var _mode = process.argv[2];
-console.log('mode', _mode)
+
 if (!_mode || ['add', 'remove', 'rm'].indexOf(_mode) == -1) {
     console.error('ERROR: use: node-systemd add [file.json] or node-systemd remove|rm [name]');
     process.exit(1);

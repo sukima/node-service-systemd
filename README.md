@@ -5,8 +5,10 @@
 
 [![PayPayl donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MRV4AM2CA9F78 "Donate using Paypal")
 
-Setup node script as systemd service, using forever
-Also create logrotate script
+Setup node script as systemd service, using forever; create also logrotate script
+
+Tested on Debian 8, Ubuntu 14
+
 
 ## Npm Installation
 
@@ -64,26 +66,24 @@ $ sudo node-systemd rm my-node-service
 
 ```
 $ sudo service my-node-service start
-    
-
+```
+```
 $ sudo service my-node-service status                                                                
-    
-
+```    
+```
 $ sudo service my-node-service stop                                                                  
-    
-
-$ service my-node-service restart
-   
+```    
+```
+$ service my-node-service restart   
 ```
 
-##### Tested on Debian 8, Ubuntu 14
 
-##### Todo
-add crontab alternative logorotate script
-check settings data
-check paths
-rollback on install error
-check if systemd is in
+### Todo
+- add crontab alternative logorotate script
+- check settings data
+- check paths
+- rollback on install error
+- check if systemd is in
 
 ## License
 
