@@ -1,6 +1,6 @@
 {
     "name": "service-systemd",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Run Node.js as systemd service",
     "keywords": ["systemd", "service", "deploy"],
     "url": "http://github.com/simone-sanfratello/node-service-systemd",
