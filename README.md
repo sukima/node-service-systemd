@@ -69,8 +69,6 @@ done
 ```
 $ sudo node-systemd rm my-node-service
 
-root@mini:/home/mini# node-systemd rm my-node-service
-mode rm
 removing ...
 > systemctl disable my-node-service.service
 remove /etc/systemd/system/my-node-service.service
