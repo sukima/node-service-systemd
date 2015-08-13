@@ -20,12 +20,12 @@ if (!_mode || ['add', 'remove', 'rm'].indexOf(_mode) == -1) {
     process.exit(1);
 }
 
+var fs = require('fs');
+var shell = require('child_process').exec;
 if (_mode == 'add') {
-    var fs = require('fs');
     var path = require('path');
     var tools = require('a-toolbox');
     var cjson = require('cjson');
-    var shell = require('child_process').exec;
     var shelljs = require('shelljs');
 
     var _file = process.argv[3];
@@ -209,8 +209,8 @@ if (_mode == 'add') {
         fs.unlink('/usr/local/bin/systemd-' + _name + '-stop');
         console.log('remove /etc/logrotate.d/' + _name);
         fs.unlink('/etc/logrotate.d/' + _name);
-        console.log('remove /etc/cron.d/' + _name);
-        fs.unlink('/etc/cron.d/' + _name);
+        //console.log('remove /etc/cron.d/' + _name);
+        //fs.unlink('/etc/cron.d/' + _name);
         console.info('done');
     });
     

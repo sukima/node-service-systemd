@@ -52,6 +52,15 @@ ERROR: Supercow powers needed... (run as root or sudo user)
 
 ```
 $ sudo node-systemd add service-template.json
+
+parsing ...
+writing script start/stop files, logrotate.d ...
+> chmod a+x /usr/local/bin/systemd-my-node-service*
+writing systemd file ...
+/etc/systemd/system/my-node-service.service
+installing ...
+> systemctl enable my-node-service.service;systemctl daemon-reload
+done
     
 ```
 
@@ -59,6 +68,16 @@ $ sudo node-systemd add service-template.json
 
 ```
 $ sudo node-systemd rm my-node-service
+
+root@mini:/home/mini# node-systemd rm my-node-service
+mode rm
+removing ...
+> systemctl disable my-node-service.service
+remove /etc/systemd/system/my-node-service.service
+remove /usr/local/bin/systemd-my-node-service-start
+remove /usr/local/bin/systemd-my-node-service-stop
+remove /etc/logrotate.d/my-node-service
+done
 
 ```
 
@@ -68,10 +87,23 @@ $ sudo node-systemd rm my-node-service
 $ sudo service my-node-service start
 ```
 ```
-$ sudo service my-node-service status                                                                
+$ sudo service my-node-service status
+● my-node-service.service - an amazing service
+   Loaded: loaded (/etc/systemd/system/my-node-service.service; enabled)
+   Active: active (running) since Thu 2015-08-13 06:58:07 CEST; 2s ago
+  Process: 974 ExecStop=/usr/local/bin/systemd-my-node-service-stop (code=exited, status=0/SUCCESS)
+  Process: 1001 ExecStart=/usr/local/bin/systemd-my-node-service-start (code=exited, status=0/SUCCESS)
+ Main PID: 1012 (nodejs)
+   CGroup: /system.slice/my-node-service.service
+           ├─1007 /usr/bin/nodejs /usr/lib/node_modules/forever/bin/monitor m...
+           └─1012 /usr/bin/nodejs /node/my-node-service/main.js -debug
+
+Aug 13 06:58:06 mini systemd-my-node-service-start[1001]: info:    Forever pr...
+Aug 13 06:58:07 mini systemd[1]: my-node-service.service: Supervising proce...s.
+Hint: Some lines were ellipsized, use -l to show in full
 ```    
 ```
-$ sudo service my-node-service stop                                                                  
+$ sudo service my-node-service stop
 ```    
 ```
 $ service my-node-service restart   
